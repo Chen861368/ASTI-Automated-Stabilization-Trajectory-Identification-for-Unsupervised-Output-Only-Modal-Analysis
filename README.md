@@ -35,21 +35,27 @@
 ## 📂 MATLAB Scripts
 
 * **PCSSI.m / SSICOV.m / SSIDATA.m**
+  
   Core MATLAB implementations of the three SSI methods.
 
 * **plotStabDiag.m**
+  
   Script for plotting classical stabilization diagrams, sourced from the open-source work of E. Cheynet (version updated on 06/12/2019).
 
 * **pcssi\_classical\_bridge\_5000\_montecarlo.m**
+  
   MATLAB script for performing a 5000-run Monte Carlo simulation using PCSSI combined with the classical stabilization diagram approach on bridge data.
 
 * **pcssi\_asti\_bridge\_5000\_montecarlo\_plot.m**
+  
   MATLAB script that takes **`python_pcssi_asti_bridge_5000_montecarlo_results.mat`** as input and visualizes the modal parameter results obtained from 5000 Monte Carlo simulations of PCSSI+ASTI on bridge data.
 
 * **ssi\_classical\_steel\_frame\_modal\_analysis.m**
+  
   Automated modal parameter analysis of the steel frame using three SSI methods in conjunction with the classical stabilization diagram approach.
 
 * **ssi\_modal\_data\_before\_asti.m**
+  
   MATLAB implementation of the three SSI system identification methods, computing modal parameters of the laboratory steel frame for each mode.
   Execution of this script produces **modes\_output\_cov.mat / modes\_output\_pc.mat / modes\_output\_data.mat**, which serve as inputs to the ASTI algorithm (`asti_steel_frame_modal_analysis.py`).
 
@@ -58,17 +64,21 @@
 ## 📂 Python Scripts
 
 * **asti\_steel\_frame\_modal\_analysis.py**
+  
   Contains only the implementation of the ASTI stabilization trajectory algorithm. The inputs are modal parameter results obtained from system identification (**modes\_output\_cov.mat / modes\_output\_pc.mat / modes\_output\_data.mat**).
   Running this script produces **true\_mean\_dict\_cov.npy / true\_mean\_dict\_pc.npy / true\_mean\_dict\_data.npy**, which are then used as inputs for **mode\_shape\_comparison\_steel\_frame.py** to generate comparative plots of mode shapes identified by the three methods.
 
 * **mode\_shape\_comparison\_steel\_frame.py**
+  
   Takes **true\_mean\_dict\_cov.npy / true\_mean\_dict\_pc.npy / true\_mean\_dict\_data.npy** as inputs and generates comparative plots of mode shapes identified by the three SSI methods combined with ASTI.
 
 * **pcssi\_asti\_bridge\_5000\_montecarlo.py**
+  
   Performs a 5000-run Monte Carlo simulation of the bridge using PCSSI+ASTI.
   The results are saved as **python\_pcssi\_asti\_bridge\_5000\_montecarlo\_results.mat** for further analysis and visualization.
 
 * **PCSSI\_ASTI.py**
+  
   Python implementation of the PCSSI method combined with the ASTI algorithm.
 
 ---
